@@ -1,0 +1,49 @@
+ {% extends 'base.html.twig' %} 
+
+{% block body %}
+<!DOCTYPE html>
+<html>
+<head>
+    <title>About</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   </head>
+<header>
+        <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+            <a class="navbar-brand" href="{{ path('home') }}">Home</a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('product') }}">Products</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('about') }}">About</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{ path('contact') }}">Contact</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+<section class="bg-light py-5">
+    <div class="container">
+        <div class="row">
+            <div class="col-md-6">
+                <h2 class="display-4 mb-4">About Us</h2>
+                <p class="lead">Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non orci sit amet dolor fermentum finibus a sed turpis.</p>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non orci sit amet dolor fermentum finibus a sed turpis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non orci sit amet dolor fermentum finibus a sed turpis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non orci sit amet dolor fermentum finibus a sed turpis.Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam non orci sit amet dolor fermentum finibus a sed turpis.</p>
+            </div>
+            <div class="col-md-6">
+                <img src="images/design-watch.jpg" class="img-fluid" alt="About Image">
+            </div>
+        </div>
+    </div>
+</section>
+
+{% endblock %}
+
