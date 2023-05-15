@@ -1,0 +1,24 @@
+.card-img-top {
+    height: 200px; /* Set the desired height for the image */
+    object-fit: cover; /* Ensure the image maintains its aspect ratio and covers the entire container */
+}
+
+.card-img-top {
+    height: 200px; /* Set the desired height for the image */
+    object-fit: cover; /* Ensure the image maintains its aspect ratio and covers the entire container */
+}
+
+.hero-image {
+/*  Hero image background styles here */
+    background-image: url('/path/to/image.jpg');
+    background-size: cover;
+    background-position: center;
+    height: 300px; /* Adjust the height as needed */
+}
+
+.hero-text {
+    position: relative;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+}

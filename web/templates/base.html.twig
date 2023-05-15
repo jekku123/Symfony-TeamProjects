@@ -5,32 +5,7 @@
         <title>{% block title %}Our App{% endblock %}</title>
         <link rel="icon" href="data:image/svg+xml,<svg xmlns=%22http://www.w3.org/2000/svg%22 viewBox=%220 0 128 128%22><text y=%221.2em%22 font-size=%2296%22>⚫️</text></svg>">
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
-         <style>
-            .card-img-top {
-                height: 200px; /* Set the desired height for the image */
-                object-fit: cover; /* Ensure the image maintains its aspect ratio and covers the entire container */
-            }
-
-            .card-img-top {
-                height: 200px; /* Set the desired height for the image */
-                object-fit: cover; /* Ensure the image maintains its aspect ratio and covers the entire container */
-            }
-            
-            .hero-image {
-        /*  Hero image background styles here */
-                background-image: url('/path/to/image.jpg');
-                background-size: cover;
-                background-position: center;
-                height: 300px; /* Adjust the height as needed */
-            }
-
-            .hero-text {
-                position: relative;
-                top: 50%;
-                transform: translateY(-50%);
-                color: white;
-            }
-        </style>
+        <link rel="stylesheet" href="{{ asset('styles/app.css') }}">
 
         {% block stylesheets %}
             {{ encore_entry_link_tags('app') }}
@@ -43,13 +18,18 @@
     </head>
     <body>
 
-        {% include 'header.html.twig' %} 
+        {% include 'header.html.twig' %}
+
         <main>
+
         {% block body %}{% endblock %}
+
         </main>
+
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+        
     </body>
 
 </html>
