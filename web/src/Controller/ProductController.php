@@ -12,7 +12,8 @@ use App\Entity\Product;
 
 class ProductController extends AbstractController
 {
-    #[Route('/product/{page}', name: 'product', defaults: ['page' => 1])]
+    #[Route('/list/{page}', name: 'list', defaults: ['page' => 1])]
+    // #[Route('/product/{page}', name: 'product', defaults: ['page' => 1])]
     public function index(int $page, EntityManagerInterface $entityManager): Response
     {
         // Must have an ORM entity for the product table
