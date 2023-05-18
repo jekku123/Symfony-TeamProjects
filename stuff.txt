@@ -1,0 +1,115 @@
+React-ion time Test
+
+
+SIMPLE CRUD:
+
+symfony new project --webapp
+
+cd project
+
+composer require maker-bundle --dev
+
+symfony console make:entity
+
+composer require annotations
+
+symfony console make:crud
+
+docker-compose up -d
+
+symfony console make:migration
+
+symfony console doctrine:migrations:migrate
+
+symfony serve -d
+
+
+
+git clone https://github.com/jekku123/Symfony-TeamProjects.git
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+cd web
+
+composer require doctrine/orm
+composer require doctrine
+
+in .env 
+change dbname
+
+in web/.env
+DATABASE_URL="mysql://root:lionPass@db:3306/reactCRUD?serverVersion=5.7"
+
+restart dockjer
+
+-root
+
+docker ps
+
+docker exec -it 0bf03fb614a9 /bin/sh
+
+cd web
+
+composer require symfony/maker-bundle --dev
+
+php bin/console make:entity
+
+php bin/console make:migration
+
+php bin/console doctrine:migrations:migrate
+
+—————
+php bin/console make:controller
+composer require templates
+
+composer require symfony/webpack-encore-bundle
+
+npm add @babel/preset-react —include=dev
+
+npm add react-router-dom
+
+npm add —include=dev react-dom prop-types axios
+
+npm add @babel/plugin-proposal-class-properties @babel/plugin-transform-runtime
+
+
+——
+
+git fetch origin
+git branch -v -a
+git switch -c test origin/company/pages

@@ -7,25 +7,24 @@ use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
 
-use App\Entity\Product;
+use App\Entity\Event;
 
 
-class ProductController extends AbstractController
+class EventController extends AbstractController
 {
-    #[Route('/list/{page}', name: 'list', defaults: ['page' => 1])]
-    // #[Route('/product/{page}', name: 'product', defaults: ['page' => 1])]
+    #[Route('/event/{page}', name: 'app_event', defaults: ['page' => 1])]
     public function index(int $page, EntityManagerInterface $entityManager): Response
     {
         // Must have an ORM entity for the product table
-        $productsRepository = $entityManager->getRepository(Product::class);
+        $eventRepository = $entityManager->getRepository(Event::class);
 
         $limit = 3; // Number of products per page
 
         // Get the total number of products
-        $totalProducts = $productsRepository->count([]);
+        $totalEvents = $eventRepository->count([]);
 
         // Calculate the total number of pages
-        $totalPages = ceil($totalProducts / $limit);
+        $totalPages = ceil($totalEvents / $limit);
 
         // Ensure the requested page is within the valid range
         $page = max(1, min($page, $totalPages));
@@ -34,10 +33,10 @@ class ProductController extends AbstractController
         $offset = ($page - 1) * $limit;
 
         // Fetch the products for the current page
-        $products = $productsRepository->findBy([], null, $limit, $offset);
+        $events = $eventRepository->findBy([], null, $limit, $offset);
 
-        return $this->render('product/index.html.twig', [
-            'products' => $products,
+        return $this->render('events/index.html.twig', [
+            'events' => $events,
             'page' => $page,
             'totalPages' => $totalPages,
         ]);

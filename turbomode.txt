@@ -1,0 +1,56 @@
+symfony new web
+cd web
+
+composer require doctrine/orm
+composer require doctrine
+
+.env dbname
+web/.env DATABASE_URL="mysql://root:lionPass@db:3306/DBHERE?serverVersion=5.7"
+
+composer require maker-bundle --dev
+
+// make basic controllers here
+
+symfony console make:entity Task
+
+composer require security-bundle
+symfony console make:user User
+
+composer require annotations form validator twig-bundle
+symfony console make:registration-form
+
+
+composer require admin:^4
+
+symfony console make:admin:dashboard
+symfony console make:admin:crud
+
+DashboardController.php
+use App\Entity\Task;
+yield MenuItem::linktoRoute('Back to the website', 'fas fa-home', 'homepage');
+yield MenuItem::linkToCrud('Tasks', 'fas fa-map-marker-alt', Task::class);
+
+use EasyCorp\Bundle\EasyAdminBundle\Router\AdminUrlGenerator;
+- return
++ $routeBuilder = $this->container->get(AdminUrlGenerator::class);
+$url = $routeBuilder->setController(TaskCrudController::class)->generateUrl();
+return $this->redirect($url);
+
+symfony console make:auth
+do LoginForm todo
+
+restart docker
+
+docker ps -> get id
+docker exec -it cbad752c3f19 /bin/sh
+
+cd web
+
+php bin/console make:migration
+php bin/console doctrine:migrations:migrate
+
+exit
+
+security.yaml stuff
+
+

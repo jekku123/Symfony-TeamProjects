@@ -2,11 +2,9 @@
 
 {% block title %}Homepage{% endblock %}
 
-{% block stylesheets %} {% endblock %}
-
 {% block body %}
 
-<header class="header-video">
+<div class="header-video">
   <video src="/videos/pexels-big-bag-films-8513971-1280x720-25fps.mp4" autoplay muted loop class="video-filter"></video>
   <div class="header-content">
         <div class="container">
@@ -14,7 +12,7 @@
             <h3 class="lead">Find, promote and manage amazing events in Helsinki Capital Region</h3>
         </div>
   </div>
-</header>
+</div>
 <div class="container" style="height: 2rem"></div>
 
 <style>
@@ -54,7 +52,6 @@ text-shadow: 0 0 10px black;
   
 </style>
 
-
     <div class="container">
         <div class="row">
             <div class="col-md-4">
@@ -63,7 +60,7 @@ text-shadow: 0 0 10px black;
                         <h2 class="card-title">Find Events</h2>
                         <p class="card-text">Browse our listing to find new experiences around.
                         </p>
-                        <a href="{{ path('list') }}"><button type="button" class="btn btn-light">See more</button></a>
+                        <a href="{{ path('app_event') }}"><button type="button" class="btn btn-light">See more</button></a>
                     </div>
                 </div>
             </div>
