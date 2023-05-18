@@ -9,7 +9,7 @@
     <title>Register</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
    </head>
-{# <div class="container py-5">
+ <div class="container py-5">
     <div class="row">
         <div class="col-md-6 offset-md-3">
             <h2 class="text-center mb-4">Sign up</h2>
@@ -29,15 +29,15 @@
             <p>Already have an account? <a href="{{ path('app_login') }}">Sign in here</a></p>
         </div>
     </div>
-</div> #}
-{{ form_start(registrationForm) }}
+</div> 
+{# {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.username) }}
         {{ form_row(registrationForm.plainPassword, {
             label: 'Password'
         }) }}
 
         <button type="submit" class="btn">Register</button>
-    {{ form_end(registrationForm) }} 
+    {{ form_end(registrationForm) }}  #}
 
 {% endblock %}
 
