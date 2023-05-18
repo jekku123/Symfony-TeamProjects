@@ -49,11 +49,11 @@
   padding: 20px;
 }
 
-.video-filter {
-  filter: grayscale(50%);
+.header-content h1,
+.header-content h3 {
+  text-shadow: 0 0 10px black;
 }
 
-.display-4,
-.lead {
-  text-shadow: 0 0 10px black;
+.video-filter {
+  filter: grayscale(50%);
 }
