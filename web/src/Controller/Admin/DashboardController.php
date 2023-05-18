@@ -2,7 +2,7 @@
 
 namespace App\Controller\Admin;
 
-use App\Entity\Product;
+use App\Entity\Event;
 use EasyCorp\Bundle\EasyAdminBundle\Config\Dashboard;
 use EasyCorp\Bundle\EasyAdminBundle\Config\MenuItem;
 use EasyCorp\Bundle\EasyAdminBundle\Controller\AbstractDashboardController;
@@ -16,7 +16,7 @@ class DashboardController extends AbstractDashboardController
     public function index(): Response
     {
         $routeBuilder = $this->container->get(AdminUrlGenerator::class);
-        $url = $routeBuilder->setController(ProductCrudController::class)->generateUrl();
+        $url = $routeBuilder->setController(EventCrudController::class)->generateUrl();
         return $this->redirect($url);
 
         // Option 1. You can make your dashboard redirect to some common page of your backend
@@ -44,7 +44,7 @@ class DashboardController extends AbstractDashboardController
 
     public function configureMenuItems(): iterable
     {
-        yield MenuItem::linktoRoute('Back to the website', 'fas fa-home', 'home');
-        yield MenuItem::linkToCrud('Products', 'fas fa-map-marker-alt', Product::class);
+        yield MenuItem::linktoRoute('Back to the page', 'fas fa-home', 'app_home');
+        yield MenuItem::linkToCrud('Events', 'fas fa-map-marker-alt', Event::class);
     }
 }

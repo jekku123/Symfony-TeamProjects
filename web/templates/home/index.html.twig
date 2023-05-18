@@ -1,13 +1,88 @@
-{% extends 'base.html.twig' %} 
+ {% extends 'base.html.twig' %} 
 
 {% block title %}Home | {{ parent() }}{% endblock %}
 
 {% block body %}
-    
-<div class="jumbotron jumbotron-fluid">
-    <div class="container text-center">
-        <h1 class="display-4">Welcome to Our Website</h1>
-        <p class="lead">Discover amazing products and more</p>
+
+<div class="header-video">
+  <video src="/videos/pexels-big-bag-films-8513971-1280x720-25fps.mp4" autoplay muted loop class="video-filter"></video>
+  <div class="header-content">
+        <div class="container">
+            <h1 class="display-4">CRUD Events</h1>
+            <h3 class="lead">Find, promote and manage amazing events in Helsinki Capital Region</h3>
+        </div>
+  </div>
+</div>
+
+<div class="container" style="height: 2rem"></div>
+
+<div class="container">
+    <div class="row">
+        <div class="col-md-4">
+            <div class="card mb-4 bg-info text-white" style="height: 16rem;">
+                <div class="card-body">
+                    <h2 class="card-title">Find Events</h2>
+                    <p class="card-text">Browse our listing to find new experiences around.
+                    </p>
+                    <a href="{{ path('app_event') }}"><button type="button" class="btn btn-light">See more</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4 bg-info text-white" style="height: 16rem;">
+                <div class="card-body">
+                    <h2 class="card-title">Promote Events</h2>
+                    <p class="card-text">Get the word out by reaching several views per day</p>
+                    <a href="{{ path('app_register') }}"><button type="button" class="btn btn-light">Get account</button></a>
+                </div>
+            </div>
+        </div>
+        <div class="col-md-4">
+            <div class="card mb-4 bg-info text-white" style="height: 16rem;">
+                <div class="card-body">
+                    <h2 class="card-title">Manage Events</h2>
+                    <p class="card-text">Easy to use interface for adding, updating and deleting events</p>
+                    <a href="{{ path('admin') }}"><button type="button" class="btn btn-light">See more</button></a>
+                </div>
+            </div>
+        </div>
+    </div>
+            
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mb-4 bg-dark text-white">
+                <div class="card-body">
+                    <h2 class="card-title">CRUD Events Crew</h2>
+                    <p class="card-text">We are a group of Helsinki Business College students who like to promote events for fun, using a Symfony app. Every day after class, we hunt for events to list in our website using various tehcnological tools, so people who just wants to check what to do on saturday night, doesn't have to.
+                    </p>
+                    </br>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12">
+            <div class="card mb-4 bg-info text-white">
+                <div class="card-body">
+                    <h2 class="card-title">Want to do business?</h2>
+                    <form>
+                        <div class="form-group">
+                            <input type="text" class="form-control col-md-8 offset-md-2" placeholder="Name">
+                        </div>
+                        
+                        <div class="form-group">
+                            <input type="text" class="form-control col-md-8 offset-md-2" placeholder="Email">
+                        </div>
+                        <div class="form-group">
+                            <textarea class="form-control col-md-8 offset-md-2" placeholder="Message"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-light col-md-2 offset-md-5">Contact Us</button>
+                    </form>
+                </div>
+            </div>
+        </div>
     </div>
 </div>
 

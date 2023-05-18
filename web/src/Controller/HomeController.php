@@ -8,7 +8,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use Doctrine\ORM\EntityManagerInterface;
-use App\Entity\Product;
+use App\Entity\Event;
 
 class HomeController extends AbstractController
 {
@@ -19,10 +19,10 @@ class HomeController extends AbstractController
         $this->entityManager = $entityManager;
     }
 
-    #[Route('/', name: 'home')]
+    #[Route('/home', name: 'app_home')]
     public function index(): Response
     {
-        $productRepository = $this->entityManager->getRepository(Product::class);
+        $productRepository = $this->entityManager->getRepository(Event::class);
         $products = $productRepository->createQueryBuilder('p')
             ->setMaxResults(3)
             ->getQuery()
@@ -33,5 +33,3 @@ class HomeController extends AbstractController
         ]);
     }
 }
-
-
