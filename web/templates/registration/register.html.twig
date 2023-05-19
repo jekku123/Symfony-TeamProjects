@@ -1,9 +1,14 @@
 {% extends 'base.html.twig' %}
 
-{% block title %}Sign Up | {{ parent() }}{% endblock %}
+{% block title %}Sign Up{% endblock %}
 
 {% block body %}
-
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css">
+   </head>
  <div class="container py-5">
     <div class="row">
         <div class="col-md-6 offset-md-3">
@@ -25,6 +30,12 @@
         </div>
     </div>
 </div> 
+<style>
+    body {
+        background-color: #FFC107;
+        font-family: 'Righteous', cursive;
+    }
+    </style>
 {# {{ form_start(registrationForm) }}
         {{ form_row(registrationForm.username) }}
         {{ form_row(registrationForm.plainPassword, {
@@ -35,4 +46,3 @@
     {{ form_end(registrationForm) }}  #}
 
 {% endblock %}
-
